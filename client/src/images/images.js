@@ -4,7 +4,7 @@ import well from './background/well.jpeg';
 import sidecastle from './background/sidecastle.jpeg';
 
 
-export const backgroundImages = [
+export const websiteImages = [
     {
         name: "Proposal",
         src: proposal
