@@ -18,12 +18,37 @@ body {
     width: 40%;
 }
 
-.nav-links li {
+.nav-links {
+    position: relative;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.nav-links > li {
+    position: relative;
+    cursor: pointer;
+    padding: 20px;
     letter-spacing: 4px;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
     list-style: none;
+}
+
+.nav-links > li::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-links > li:hover::after, li.active::after {
+    transform: scaleX(1);
 }
 
 /* toggler */
