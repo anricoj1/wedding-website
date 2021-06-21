@@ -120,6 +120,14 @@ embed {
     border-radius: 20px;
 }
 
+/* rsvp form */
+.rsvp-component {
+    margin: 10px auto;
+    border: 1px solid red;
+    height: 50%;
+    width: 50%;
+}
+
 @media screen and (max-width: 750px) {
     .map-component {
         height: 300px;

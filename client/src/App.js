@@ -5,38 +5,38 @@ import Fadein from 'react-fade-in';
 // navbar
 import Navbar from './navbar/Navbar';
 
-// images
-import * as pictures from './images/images';
-
 // controllers
-import { imageHelper, WebsiteImages, GoogleMap } from './controllers/Helpers';
+import { GoogleMap, ModalRenderer, modalStyles } from './controllers/Helpers';
+import { WebsiteImages, imageHelper } from './controllers/images/images';
 
 //css
 import './App.css';
 
 const App = () => {
+    // window Width
+    const [ww, setWW] = useState(window.innerWidth);
+
+    // state
     const [state, setState] = useState({
-        state: <WebsiteImages pictures={pictures.websiteImages} />,
+        state: <WebsiteImages />,
         color: 'black'
     });
 
-    const [windows, setWindow] = useState({
-        ww: window.innerWidth,
-        wh: window.innerHeight
+    const [modal, setModal] = useState({
+        state: false,
+        data: {}
     });
 
+    // on resize set ww
+    window.onresize = () => setWW(window.innerWidth);
+
+    // when ww changes, useEffect handles images
     useEffect(() => {
-        imageHelper(setState, pictures.websiteImages, windows);
-    }, [windows]);
+        imageHelper(setState, ww);
+    }, [ww]);
 
-    window.onresize = () => {
-        setWindow({
-            ww: window.innerWidth,
-            wh: window.innerHeight
-        });
-    }
-
-
+    //mui classes
+    let classes = modalStyles();
 
     return (
         <div className="App">
@@ -49,7 +49,10 @@ const App = () => {
                     <div className="homeDiv-content">
                         <h1 className="odometer-text">We're Engaged!</h1><br />
                         <h4>November 11th - 13th, 2023 - South Carolina</h4>
-                        <button className="btn btn-transparent">RSVP</button>
+                        <button className="btn btn-transparent" onClick={() => setModal({
+                            state: true,
+                            data: {}
+                        })}>RSVP</button>
                     </div>
                 </div>
             </div>
@@ -60,6 +63,11 @@ const App = () => {
                     </div>
                 </Fadein>
             </div>
+            <ModalRenderer
+                setModal={setModal}
+                modal={modal}
+                classes={modalStyles()}
+            />
         </div>
     )
 }
