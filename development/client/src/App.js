@@ -6,7 +6,7 @@ import Fadein from 'react-fade-in';
 import Navbar from './navbar/Navbar';
 
 // controllers
-import { GoogleMap, ModalRenderer, modalStyles } from './controllers/Helpers';
+import { GoogleMap, ModalRenderer } from './controllers/Helpers';
 import { WebsiteImages, imageHelper } from './controllers/images/images';
 
 //css
@@ -24,6 +24,7 @@ const App = () => {
 
     const [modal, setModal] = useState({
         state: false,
+        name: null,
         data: {}
     });
 
@@ -34,9 +35,6 @@ const App = () => {
     useEffect(() => {
         imageHelper(setState, ww);
     }, [ww]);
-
-    //mui classes
-    let classes = modalStyles();
 
     return (
         <div className="App">
@@ -51,6 +49,7 @@ const App = () => {
                         <h4>November 11th - 13th, 2023 - South Carolina</h4>
                         <button className="btn btn-transparent" onClick={() => setModal({
                             state: true,
+                            name: "Register",
                             data: {}
                         })}>RSVP</button>
                     </div>
@@ -66,7 +65,6 @@ const App = () => {
             <ModalRenderer
                 setModal={setModal}
                 modal={modal}
-                classes={modalStyles()}
             />
         </div>
     )

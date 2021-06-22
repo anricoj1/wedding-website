@@ -37,7 +37,6 @@ html::-webkit-scrollbar {
     color: white !important;
 
     width: 100%;
-    height: calc();
 
     transition: 2s ease-in;
 }
@@ -123,10 +122,34 @@ embed {
 /* rsvp form */
 .rsvp-component {
     margin: 10px auto;
-    border: 1px solid red;
-    height: 50%;
+    height: 80%;
     width: 50%;
 }
+
+.input-space {
+    margin-top: 20px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.submit-button > button {
+    padding: 20px;
+    background: black;
+    color: white;
+    width: 50%;
+    transition: 2s ease-in;
+}
+
+.submit-button > button:hover {
+    background: #24A0ED;
+    transition: 2s ease-in;
+}
+
 
 @media screen and (max-width: 750px) {
     .map-component {
