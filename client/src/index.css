@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster';
+}
+
+html, body, #root, .App {
+    height: 100%;
+    width: 100%;
+    background: #F0FBFF;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+#global-nav {
+    position: fixed;
+}
