@@ -3,6 +3,11 @@ export interface Image {
     src: string
 }
 
+export interface GalleryProps {
+    intervalTime?: number;
+    imageList: Array<any>;
+}
+
 export interface RouteProps {
     title: string;
     path: string;

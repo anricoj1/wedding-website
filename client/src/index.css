@@ -1,3 +1,8 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Satisfy&display=swap');
+
+
+/* inital css */
 * {
     padding: 0;
     margin: 0;
@@ -6,15 +11,145 @@
 }
 
 html, body, #root, .App {
-    height: 100%;
-    width: 100%;
-    background: #F0FBFF;
+    height: 100vh;
+    width: 100vw;
+    background: #D6F4FF;
 }
 
 html::-webkit-scrollbar {
     display: none;
 }
 
-#global-nav {
-    position: fixed;
+/* common css */
+.center {
+    text-align: center;
+}
+
+.home-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-child {
+    flex: 1;
+}
+
+.header-text {
+    transition: 1s ease;
+    padding: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Satisfy';
+}
+
+/* gallery styles */
+.gallery {
+    transition: 1s ease;
+    height: 100%;
+    width: 500px;
+    /* background: rgba(0, 0, 0, 0.7); */
+    background: rgba(0, 0, 0, 0.2)
+}
+
+.gallery-image {
+    transition: 0.1s ease;
+    width: 500px;
+    height: auto;
+    top: 20%;
+    position: absolute;
+}
+
+.next, .prev {
+    top: calc(50% - 20px);
+    position: absolute;
+    background: white;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.next {
+    transition: 1s ease;
+    left: 460px;
+}
+
+.prev {
+    left: 10px;
+    transform: scale(-1);
+}
+
+/* containers */
+.main-container {
+    background:#F5FCFF;    
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .header-text {
+        transition: 1s ease-in;
+        font-size: 30px;
+        resize: both;
+    }
+
+    .next, .prev {
+        top: calc(20% - 20px)
+    }
+
+    .next {
+        transition: 1s ease;
+        left: unset;
+        right: 20px;
+    }
+
+    .home-flex {
+        flex-direction: column;
+    }
+
+    .gallery {
+        transition: 1s ease;
+        height: 50%;
+        width: 100%;
+    }
+
+    .gallery-image {
+        border-radius: 20px;
+        display: block;
+        height: inherit;
+        width: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .gallery {
+        height: 50%;
+        width: inherit
+    }
+
+    .gallery-image {
+        top: 0;
+        left: unset;
+        border-radius: 0%;
+        height: inherit;
+        width: inherit;
+    }
 }

@@ -1,5 +1,5 @@
 // interfaces
-import { BaseProps, RouteProps } from 'interfaces';
+import { RouteProps } from 'interfaces';
 
 // icons
 import { LocationOn, Home, Redeem } from '@material-ui/icons';
@@ -11,7 +11,7 @@ import Location from 'routes/location';
 import Ourstory from 'routes/ourstory';
 import Wedding from 'routes/wedding';
 
-const routes = (props: BaseProps): RouteProps[] => [
+const routes: RouteProps[] = [
     {
         title: "Home",
         path: '/',
