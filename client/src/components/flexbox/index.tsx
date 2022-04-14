@@ -1,16 +1,26 @@
 // interfaces
-import { ContainerProps } from "interfaces";
+import { FlexboxProps } from "interfaces";
 
 
-const Flexbox = ({ className = 'flex-child', title = 'Jason & Alisha', children }: ContainerProps) => {
+/** * className = 'flex-container' */
+export const Flexbox = ({ className = 'flex-container', children }: FlexboxProps) => {
     return (
         <div className={className}>
-            <h1 className="header-text">
-                {title}
-            </h1>
             {children}
         </div>
     )
 }
 
-export default Flexbox;
+/** * className = 'flex-child, title = 'Jason & Alisha', child of Flexbox */
+export const FlexChild = ({ className = 'flex-child', title = 'Jason & Alisha', children }: FlexboxProps) => {
+    return (
+        <div className={className}>
+            {title && (
+                <h1 className="header-text">
+                    {title}
+                </h1>
+            )}
+            {children}
+        </div>
+    )
+}

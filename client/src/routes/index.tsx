@@ -2,46 +2,68 @@
 import { RouteProps } from 'interfaces';
 
 // icons
-import { LocationOn, Home, Redeem } from '@material-ui/icons';
+import { LocationOn, Home, Redeem, ImportContacts, Person } from '@material-ui/icons';
 
-// components
+// routes
 import Index from 'routes/home';
 import Gifts from 'routes/gifts';
 import Location from 'routes/location';
 import Ourstory from 'routes/ourstory';
 import Wedding from 'routes/wedding';
+import Profile from 'routes/profile';
 
-const routes: RouteProps[] = [
-    {
+// components
+import Extends from 'components/extends';
+
+const routes: Record<string, RouteProps> = {
+    home: {
         title: "Home",
         path: '/',
-        element: <Index />,
+        element: <Extends Appbar={false}>
+            <Index />
+        </Extends>,
         icon: <Home fontSize="large" />
     },
-    {
-        title: "Wedding",
-        path: '/wedding',
-        element: <Wedding />,
-        icon: <div></div>
-    },
-    {
-        title: "Location",
-        path: '/location',
-        element: <Location />,
-        icon: <LocationOn fontSize="large" />
-    },
-    {
-        title: "Gifts",
-        path: '/gifts',
-        element: <Gifts />,
-        icon: <Redeem fontSize="large" />
-    },
-    {
+    ourstory: {
         title: "Our Story",
         path: '/ourstory',
-        element: <Ourstory />,
+        element: <Extends Appbar={false}>
+            <Ourstory />
+        </Extends>,
+        icon: <ImportContacts fontSize="large" />
+    },
+    wedding: {
+        title: "Wedding",
+        path: '/wedding',
+        element: <Extends Appbar={false}>
+            <Wedding />
+        </Extends>,
         icon: <div></div>
-    }
-]
+    },
+    gifts: {
+        title: "Gifts",
+        path: '/gifts',
+        element: <Extends>
+            <Gifts />
+        </Extends>,
+        icon: <Redeem fontSize="large" />
+    },
+    location: {
+        title: "Location",
+        path: '/location',
+        element: <Extends>
+            <Location />
+        </Extends>,
+        icon: <LocationOn fontSize="large" />
+    },
+    profile: {
+        title: "Profile",
+        path: '/profile',
+        element: <Extends>
+            <Profile />
+        </Extends>,
+        icon: <Person fontSize="large" />
+    },
+}
 
 export default routes;

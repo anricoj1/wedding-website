@@ -8,6 +8,8 @@ import { GalleryProps } from "interfaces";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 
+
+/** * intervalTime = 4000, provide array of image srcs to map */
 const Gallery = ({ imageList, intervalTime = 4000 }: GalleryProps) => {
 
     // page and direction

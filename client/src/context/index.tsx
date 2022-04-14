@@ -2,4 +2,4 @@
 import { createContext } from 'react';
 
 // media query context
-export const MediaContext = createContext(null || {});
+export const MediaQueryContext = createContext(null || {});

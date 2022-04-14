@@ -1,34 +1,37 @@
-// react
-import { useContext } from "react";
+// interfaces
+import { PageProps } from "interfaces";
 
-// context
-import { MediaContext } from "context";
+// flex
+import { Flexbox, FlexChild } from "components/flexbox";
+
+// mui
+import { withStyles } from "@material-ui/core";
+
+// styles
+import { useStyles } from "styles";
 
 // components
 import Gallery from "components/gallery";
 import Container from "components/containers";
-import Flexbox from "components/flexbox";
 
 // image list
 import imageList from "static/images";
 
-const Index = () => {
-    // use media context
-    const media: Record<string, boolean> = useContext(MediaContext);
+const Index = withStyles(useStyles)(({ classes }: PageProps) => {
 
     return (
-        <div className="home-flex">
+        <Flexbox>
             <Gallery
                 imageList={imageList}
-                intervalTime={60000}
+                // intervalTime={60000}
             />
-            <Flexbox>
-                <Container className="main-container">
+            <FlexChild>
+                <Container>
                     Home
                 </Container>
-            </Flexbox>
-        </div>
+            </FlexChild>
+        </Flexbox>
     )
-}
+});
 
 export default Index;

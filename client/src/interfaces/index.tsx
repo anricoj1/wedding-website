@@ -1,12 +1,13 @@
-import { BaseProps, ContainerProps } from 'interfaces/baseprops';
-import { RouteProps, PageProps, Image, GalleryProps } from 'interfaces/routeprops';
+import { ExtendsProps, ContainerProps, FlexboxProps, GalleryProps } from 'interfaces/baseprops';
+import { RouteProps, PageProps, NavProps } from 'interfaces/routeprops';
 
 
 export type {
-    BaseProps,
+    ExtendsProps,
     ContainerProps,
+    FlexboxProps,
     RouteProps,
-    Image,
     GalleryProps,
-    PageProps
+    PageProps,
+    NavProps
 }

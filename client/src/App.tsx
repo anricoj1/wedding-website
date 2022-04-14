@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // context
-import { MediaContext } from 'context';
+import { MediaQueryContext } from 'context';
 
 // mui
 import { useTheme } from '@material-ui/core';
@@ -14,7 +14,6 @@ import { RouteProps } from 'interfaces';
 // routes
 import routes from 'routes';
 
-
 const App = () => {
     // themes
     let theme = useTheme();
@@ -22,10 +21,10 @@ const App = () => {
 
     return (
         <div className="App">
-            <MediaContext.Provider value={media}>
+            <MediaQueryContext.Provider value={media}>
                 <Router>
                     <Routes>
-                        {routes.map((route: RouteProps, index: number) => {
+                        {Object.values(routes).map((route: RouteProps, index: number) => {
                             const { path, element } = route;
 
                             return (
@@ -38,7 +37,7 @@ const App = () => {
                         })}
                     </Routes>
                 </Router>
-            </MediaContext.Provider>
+            </MediaQueryContext.Provider>
         </div>
     )
 }

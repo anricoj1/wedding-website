@@ -25,7 +25,7 @@ html::-webkit-scrollbar {
     text-align: center;
 }
 
-.home-flex {
+.flex-container {
     display: flex;
     width: 100%;
     height: 100%;
@@ -89,12 +89,90 @@ html::-webkit-scrollbar {
 
 /* containers */
 .main-container {
-    background:#F5FCFF;    
-    height: 80%;
-    width: 80%;
+    background: #F5FCFF;
     margin: auto;
     border-radius: 20px;
     box-shadow: 2px 2px 5px black;
+}
+
+/* nav top */
+.header {
+    display: flex;
+    background: white;
+    padding: 10px;
+    box-shadow: 3px 1px 10px black;
+}
+
+.navbar-brand {
+    flex-grow: 1;
+    margin: auto 10px;
+    font-size: 25px;
+    font-family: 'Satisfy';
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.navbar-top {
+    display: flex;
+    width: 50%;
+}
+
+.navbar {
+    display: flex;
+    cursor: pointer;
+}
+
+.nav-item {
+    list-style-type: none;
+    margin: auto;
+}
+
+.nav-item > .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-item > .nav-link::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    top: 5px;
+    background: transparent;
+    transition: all 0.5s;
+}
+
+.nav-item > .nav-link:hover::after, .nav-item > .nav-link.active-nav::after {
+    width: 100%;
+    background: black;
+}
+
+
+/* bottom nav */
+.backdrop {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0.8;
+    height: 94%;
+}
+
+.link-container {
+    margin: 25% auto;
+}
+
+.menu-link {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: block;
+    margin: 30px;
 }
 
 
@@ -115,7 +193,7 @@ html::-webkit-scrollbar {
         right: 20px;
     }
 
-    .home-flex {
+    .flex-container {
         flex-direction: column;
     }
 
@@ -151,5 +229,17 @@ html::-webkit-scrollbar {
         border-radius: 0%;
         height: inherit;
         width: inherit;
+    }
+}
+
+@keyframes linkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }

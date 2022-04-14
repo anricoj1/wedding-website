@@ -1,13 +1,3 @@
-export interface Image {
-    name: string;
-    src: string
-}
-
-export interface GalleryProps {
-    intervalTime?: number;
-    imageList: Array<any>;
-}
-
 export interface RouteProps {
     title: string;
     path: string;
@@ -16,7 +6,10 @@ export interface RouteProps {
 }
 
 export interface PageProps {
-    media: any;
     classes: any;
-    images: Record<string, Image>;
+}
+
+export interface NavProps {
+    classes: any;
+    links?: Record<string, RouteProps>;
 }
