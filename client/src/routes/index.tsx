@@ -15,6 +15,8 @@ import Profile from 'routes/profile';
 // components
 import Extends from 'components/extends';
 
+// home, our story & wedding routes can render from same page, change content in container
+
 const routes: Record<string, RouteProps> = {
     home: {
         title: "Home",
@@ -40,14 +42,6 @@ const routes: Record<string, RouteProps> = {
         </Extends>,
         icon: <div></div>
     },
-    gifts: {
-        title: "Gifts",
-        path: '/gifts',
-        element: <Extends>
-            <Gifts />
-        </Extends>,
-        icon: <Redeem fontSize="large" />
-    },
     location: {
         title: "Location",
         path: '/location',
@@ -55,6 +49,14 @@ const routes: Record<string, RouteProps> = {
             <Location />
         </Extends>,
         icon: <LocationOn fontSize="large" />
+    },
+    gifts: {
+        title: "Gifts",
+        path: '/gifts',
+        element: <Extends>
+            <Gifts />
+        </Extends>,
+        icon: <Redeem fontSize="large" />
     },
     profile: {
         title: "Profile",

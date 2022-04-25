@@ -23,7 +23,7 @@ const Index = withStyles(useStyles)(({ classes }: PageProps) => {
         <Flexbox>
             <Gallery
                 imageList={imageList}
-                // intervalTime={60000}
+                intervalTime={60000}
             />
             <FlexChild>
                 <Container>
