@@ -5,19 +5,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MediaQueryContext } from 'context';
 
 // mui
-import { useTheme } from '@material-ui/core';
+import { useTheme, Theme } from '@material-ui/core';
 import { useMedia } from 'styles';
 
-// interfaces
-import { RouteProps } from 'interfaces';
+// types
+import { RouteProps } from 'types';
 
 // routes
 import routes from 'routes';
 
 const App = () => {
     // themes
-    let theme = useTheme();
-    let media = useMedia(theme);
+    let theme: Theme = useTheme();
+    let media: Record<string, boolean> = useMedia(theme);
 
     return (
         <div className="App">

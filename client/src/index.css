@@ -43,6 +43,19 @@ html::-webkit-scrollbar {
     font-family: 'Satisfy';
 }
 
+.merriweather {
+    font-family: 'Merriweather';
+}
+
+.satisfy {
+    font-family: 'Satisfy';
+}
+
+.date-info {
+    padding: 20px;
+}
+
+
 /* gallery styles */
 .gallery {
     transition: 1s ease;

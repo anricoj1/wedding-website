@@ -21,3 +21,7 @@ export interface FlexboxProps {
     title?: string;
     children: any;
 }
+
+export interface CountdownWidgetProps {
+    destinationDate: Date;
+}

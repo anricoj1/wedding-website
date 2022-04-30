@@ -2,8 +2,8 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-// interfaces
-import { NavProps, RouteProps } from "interfaces";
+// types
+import { NavProps, RouteProps } from "types";
 
 // mui
 import { Button, BottomNavigation, BottomNavigationAction, withStyles } from "@material-ui/core";

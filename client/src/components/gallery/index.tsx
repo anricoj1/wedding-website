@@ -1,8 +1,8 @@
 // react
 import { useEffect, useState } from "react";
 
-// interfaces
-import { GalleryProps } from "interfaces";
+// types
+import { GalleryProps } from "types";
 
 // framer
 import { motion, AnimatePresence } from "framer-motion";

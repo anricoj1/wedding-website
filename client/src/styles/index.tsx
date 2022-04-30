@@ -30,5 +30,16 @@ export const useStyles: Styles<Theme, {}, string> = (theme: Theme) => ({
         '&:hover': {
             fill: 'white'
         }
+    },
+    rsvpBtn: {
+        padding: '30px',
+        width: '40%',
+        border: '1px solid black',
+        fontSize: '20px',
+        transition: '0.8s ease',
+        '&:hover': {
+            boxShadow: '2px 2px 5px black',
+            transition: '0.8s ease'
+        }
     }
 })

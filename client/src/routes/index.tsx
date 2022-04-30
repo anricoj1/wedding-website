@@ -1,5 +1,5 @@
-// interfaces
-import { RouteProps } from 'interfaces';
+// types
+import { RouteProps } from 'types';
 
 // icons
 import { LocationOn, Home, Redeem, ImportContacts, Person } from '@material-ui/icons';

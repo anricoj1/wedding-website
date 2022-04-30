@@ -1,5 +1,5 @@
-// interfaces
-import { FlexboxProps } from "interfaces";
+// types
+import { FlexboxProps } from "types";
 
 
 /** * className = 'flex-container' */

@@ -1,8 +1,8 @@
 // react
 import { useLocation, Link } from "react-router-dom";
 
-// interfaces
-import { NavProps, RouteProps } from "interfaces";
+// types
+import { NavProps, RouteProps } from "types";
 
 // mui
 import { Button, withStyles } from "@material-ui/core";
