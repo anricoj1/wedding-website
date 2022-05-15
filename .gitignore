@@ -1,4 +1,8 @@
+## client
 node_modules
 package-lock.json
+
+# api
 venv
+*.db
 __pycache__

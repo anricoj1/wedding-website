@@ -10,7 +10,7 @@ wsgi_server: FastAPI = FastAPI()
 # include routers
 wsgi_server.include_router(api)
 
-@wsgi_server.route('/', methods=['GET'])
+@wsgi_server.get('/')
 def index():
     return 'index.html'
 
