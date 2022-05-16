@@ -1,3 +1,6 @@
+# config
+from config.env import WEDDING_DB
+
 # third party modules
 from pandas.io.sql import DatabaseError
 from pandas import read_sql_query
@@ -35,6 +38,7 @@ class SQLiteConnection:
 
     def alert_rows(self, query: str, params=[] or (), close=False) -> None:
         """Commit db UPDATES, DELETES, INSERTS etc.. Optional[params], Optional[close]"""
+        info(f"Executed query: {query}")
         try:
             if len(params) > 0:
                 self.execute(query, params)
@@ -53,7 +57,7 @@ class SQLiteConnection:
 class WeddingDatabase(SQLiteConnection):
     """Wedding Database"""
     def __init__(self) -> None:
-        SQLiteConnection.__init__(self)
+        SQLiteConnection.__init__(self, db_name=WEDDING_DB)
 
     def create_users(self) -> None:
         """Create users table"""

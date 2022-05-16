@@ -1,19 +1,23 @@
+# config
+from config.env import HOST, PORT, RELOAD, APP
+
+# fastapi
 from fastapi import FastAPI
 from uvicorn import run
 
 # api routers
-from routers.api import api
+from routers.client import client
 
 # create server
 wsgi_server: FastAPI = FastAPI()
 
 # include routers
-wsgi_server.include_router(api)
+wsgi_server.include_router(client)
 
 @wsgi_server.get('/')
-def index():
+def index():    
     return 'index.html'
 
 
 if __name__ == '__main__':
-    run("server:wsgi_server", host="0.0.0.0", port=80, reload=True)
+    run(app=APP, host=HOST, port=PORT, reload=RELOAD)

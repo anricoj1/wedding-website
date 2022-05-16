@@ -4,5 +4,6 @@ package-lock.json
 
 # api
 venv
+.env
 *.db
 __pycache__
