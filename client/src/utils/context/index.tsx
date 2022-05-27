@@ -7,7 +7,8 @@ export const MediaQueryContext = createContext(null || {});
 
 // modal context
 export const ModalContext = createContext<UseModalProps>({ 
-    modal: { state: false, data: null },
+    modal: { state: false, name: null, params: {} },
     setModal: null,
-    handleModalClick: (data: any) => console.log('clicked')
+    handleModalClick: (data: any) => null,
+    handleModalClose: () => null
 });

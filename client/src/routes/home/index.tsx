@@ -2,7 +2,7 @@
 import { useContext } from 'react';
 
 // context
-import { MediaQueryContext, ModalContext } from 'context';
+import { MediaQueryContext, ModalContext } from "utils/context";
 
 // types
 import { PageProps } from "types";
@@ -50,7 +50,7 @@ const Index = withStyles(useStyles)(({ classes }: PageProps) => {
                             <CountdownWidget destinationDate={new Date('Nov 11, 2023 12:00:00')} />
                         </div>
                         <Button
-                            onClick={() => handleModalClick('data')}
+                            onClick={() => handleModalClick({ name: "RSVP" })}
                             className={classes.rsvpBtn}
                             variant="outlined"
                         >

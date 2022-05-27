@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // context
-import { MediaQueryContext } from 'context';
+import { MediaQueryContext } from 'utils/context';
 
 // mui
 import { useTheme, Theme } from '@material-ui/core';

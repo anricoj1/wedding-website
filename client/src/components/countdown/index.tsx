@@ -20,7 +20,7 @@ const CountdownWidget = ({ destinationDate }: CountdownWidgetProps) => {
     }
 
     // days hours etc interval
-    useEffect(() => {
+    useEffect(function handleCountdownInterval() {
         const interval = setInterval(() => {
             // get the destination date element
             let weddingDate = document.getElementById('date');

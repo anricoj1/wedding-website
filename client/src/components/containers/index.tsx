@@ -2,7 +2,7 @@
 import { useContext, useLayoutEffect, useState } from "react";
 
 // context
-import { MediaQueryContext } from "context";
+import { MediaQueryContext } from "utils/context";
 
 // types
 import { ContainerProps } from "types";

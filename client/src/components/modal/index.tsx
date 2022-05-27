@@ -8,22 +8,15 @@ import { Modal, Fade, Backdrop, withStyles } from '@material-ui/core';
 import { useStyles } from 'styles/modal';
 
 
-const RenderModal = withStyles(useStyles)(({ modal, setModal, classes}: RenderModalProps) => {
+const RenderModal = withStyles(useStyles)(({ modal, handleModalClose, classes}: RenderModalProps) => {
     // values from modal
-    const { state, data } = modal;
-
-    // hide modal
-    const handleClose = () => setModal({
-        state: false,
-        data: null
-    });
-
+    const { state } = modal;
 
     return (
         <Modal
         className={classes.modal}
         open={state}
-        onClose={handleClose}
+        onClose={handleModalClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{

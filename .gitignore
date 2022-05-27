@@ -2,8 +2,15 @@
 node_modules
 package-lock.json
 
-# api
+# environment
 venv
 .env
+
+# databases
 *.db
+
+# cache=
 __pycache__
+
+# logs
+*.log

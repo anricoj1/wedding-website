@@ -1,16 +1,21 @@
+// modal state props
 export interface ModalProps {
     state: boolean;
-    data: any;
+    name: string | null;
+    params: any | null;
 }
 
+// use modal hook
 export interface UseModalProps {
     modal: ModalProps;
     setModal: any;
-    handleModalClick: any;
+    handleModalClick: Function;
+    handleModalClose: Function;
 }
 
+// render modal component props
 export interface RenderModalProps {
     modal: ModalProps;
-    setModal: any;
+    handleModalClose: any;
     classes: any;
 }

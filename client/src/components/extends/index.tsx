@@ -4,11 +4,9 @@ import { Fragment, useContext } from 'react';
 // types
 import { ExtendsProps } from "types";
 
-// hooks
-import { useModal } from 'hooks';
-
-// context
-import { MediaQueryContext, ModalContext } from "context";
+// utils
+import { useModal } from 'utils/hooks';
+import { MediaQueryContext, ModalContext } from "utils/context";
 
 // menu
 import MenuTop from "navigation/MenuTop";
@@ -23,11 +21,11 @@ const Extends = ({ Appbar = true, children }: ExtendsProps) => {
     const media: Record<string, boolean> = useContext(MediaQueryContext);
 
     // use modal
-    const { modal, setModal, handleModalClick } = useModal();
+    const { modal, setModal, handleModalClick, handleModalClose } = useModal();
 
     return (
         <Fragment>
-            <ModalContext.Provider value={{ modal, setModal, handleModalClick }}>
+            <ModalContext.Provider value={{ modal, setModal, handleModalClick, handleModalClose }}>
                 {Appbar && !media['1000'] && (
                     <MenuTop />
                 )}
@@ -40,7 +38,7 @@ const Extends = ({ Appbar = true, children }: ExtendsProps) => {
 
                 <RenderModal
                     modal={modal}
-                    setModal={setModal}
+                    handleModalClose={handleModalClose}
                 />
             </ModalContext.Provider>
         </Fragment>
