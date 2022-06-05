@@ -25,7 +25,7 @@ const RenderModal = withStyles(useStyles)(({ modal, handleModalClose, classes}: 
     >
         <Fade in={modal.state} timeout={500}>
             <div className={classes.modalContainer}>
-
+                
             </div>
         </Fade>
     </Modal>

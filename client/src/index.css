@@ -39,7 +39,7 @@ html::-webkit-scrollbar {
     transition: 1s ease;
     padding: 10px;
     text-align: center;
-    font-size: 50px;
+    font-size: clamp(1.5rem, -0.875rem + 8.333333vw, 3.5rem);
     font-family: 'Satisfy';
 }
 
@@ -49,6 +49,14 @@ html::-webkit-scrollbar {
 
 .satisfy {
     font-family: 'Satisfy';
+}
+
+.text-md {
+    font-size: clamp(.8rem, -0.875rem + 7.333333vw, 1.5rem);
+}
+
+.text-sm {
+    font-size: clamp(.5rem, -0.875rem + 8.333333vw, 1rem);
 }
 
 .date-info {
@@ -192,7 +200,6 @@ html::-webkit-scrollbar {
 @media screen and (max-width: 1000px) {
     .header-text {
         transition: 1s ease-in;
-        font-size: 30px;
         resize: both;
     }
 

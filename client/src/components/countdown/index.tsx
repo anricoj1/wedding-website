@@ -33,7 +33,7 @@ const CountdownWidget = ({ destinationDate }: CountdownWidgetProps) => {
 
     return (
         <h3>
-            <span id="date">{calculateDateDiff()}</span>
+            <span id="date" className="text-sm">{calculateDateDiff()}</span>
         </h3>
     )
 }

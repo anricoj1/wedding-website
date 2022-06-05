@@ -43,10 +43,10 @@ const Index = withStyles(useStyles)(({ classes }: PageProps) => {
                     <div className="center" style={{
                         marginTop: media['1000'] ? 0 : '100px'
                     }}>
-                        <h2 className="merriweather">The Forevermore Farm</h2>
-                        <h3 className="merriweather">Moore, South Carolina</h3>
+                        <h2 className="text-md merriweather">The Forevermore Farm</h2>
+                        <h3 className="text-sm merriweather">Moore, South Carolina</h3>
                         <div className="date-info">
-                            <h2 className="satisfy">11/11/2023</h2>
+                            <h2 className="text-md merriweather">11/11/2023</h2>
                             <CountdownWidget destinationDate={new Date('Nov 11, 2023 12:00:00')} />
                         </div>
                         <Button

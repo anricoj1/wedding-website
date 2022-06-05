@@ -9,8 +9,8 @@ import { useModal } from 'utils/hooks';
 import { MediaQueryContext, ModalContext } from "utils/context";
 
 // menu
-import MenuTop from "navigation/MenuTop";
-import MenuBottom from "navigation/MenuBottom";
+import MenuTop from "components/navigation/MenuTop";
+import MenuBottom from "components/navigation/MenuBottom";
 
 // components
 import RenderModal from 'components/modal';

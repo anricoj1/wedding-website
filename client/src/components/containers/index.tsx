@@ -8,7 +8,7 @@ import { MediaQueryContext } from "utils/context";
 import { ContainerProps } from "types";
 
 // components
-import ContainerMenu from "navigation/ContainerMenu";
+import ContainerMenu from "components/navigation/ContainerMenu";
 
 /** * className = 'main-container', height = '80%', width = '80%', Can Provide Appbar as bool */
 const Container = ({ className = 'main-container', height = '80%', width = '80%', Appbar = true, children }: ContainerProps) => {

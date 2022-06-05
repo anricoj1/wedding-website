@@ -32,7 +32,7 @@ export const useStyles: Styles<Theme, {}, string> = (theme: Theme) => ({
         }
     },
     rsvpBtn: {
-        padding: '30px',
+        padding: 'clamp(5px, 1vw, 30px)',
         width: '40%',
         border: '1px solid black',
         fontSize: '20px',
