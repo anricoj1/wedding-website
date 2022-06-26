@@ -11,7 +11,7 @@ import { PageProps } from "types";
 import { Flexbox, FlexChild } from "components/flexbox";
 
 // mui
-import { Button, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 
 // styles
 import { useStyles } from "styles";
@@ -20,6 +20,7 @@ import { useStyles } from "styles";
 import Gallery from "components/gallery";
 import Container from "components/containers";
 import CountdownWidget from 'components/countdown';
+import AuthButton from 'components/buttons/auth';
 
 // image list
 import imageList from "static/images";
@@ -49,13 +50,7 @@ const Index = withStyles(useStyles)(({ classes }: PageProps) => {
                             <h2 className="text-md merriweather">11/11/2023</h2>
                             <CountdownWidget destinationDate={new Date('Nov 11, 2023 12:00:00')} />
                         </div>
-                        <Button
-                            onClick={() => handleModalClick({ name: "RSVP" })}
-                            className={classes.rsvpBtn}
-                            variant="outlined"
-                        >
-                            RSVP
-                        </Button>
+                        <AuthButton title="RSVP" classes={classes} />
                     </div>
                 </Container>
             </FlexChild>

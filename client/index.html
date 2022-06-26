@@ -7,26 +7,26 @@
         <meta name="theme-color" />
 
         <!-- icons -->
-        <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico"/> -->
+        <link rel="shortcut icon" href="static/favicon.ico">
+        <link rel="apple-touch-icon" href="static/favicon.ico"/>
 
         <!-- title -->
         <title>Jason & Alisha</title>
 
         <!-- manifest -->
-        <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json"> -->
+        <link rel="manifest" href="static/manifest.json">
     </head>
     <body>
         <div id="root"></div>
     </body>
     <script type="module" src="./src/index.tsx"></script>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js').then(reg => {
+                navigator.serviceWorker.register('static/service-worker.js').then(reg => {
                     console.log(`Service worker loaded...`)
                 }).catch(error => console.error(`Failure: ${error}`))
             })
         }
-    </script> -->
+    </script>
 </html>

@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // context
-import { MediaQueryContext } from 'utils/context';
+import { MediaQueryContext, Auth0ProviderWithHistory } from 'utils/context';
 
 // mui
 import { useTheme, Theme } from '@material-ui/core';
@@ -23,19 +23,21 @@ const App = () => {
         <div className="App">
             <MediaQueryContext.Provider value={media}>
                 <Router>
-                    <Routes>
-                        {Object.values(routes).map((route: RouteProps, index: number) => {
-                            const { path, element } = route;
+                    <Auth0ProviderWithHistory>
+                        <Routes>
+                            {Object.values(routes).map((route: RouteProps, index: number) => {
+                                const { path, element } = route;
 
-                            return (
-                                <Route
-                                    key={index}
-                                    path={path}
-                                    element={element}
-                                />
-                            )
-                        })}
-                    </Routes>
+                                return (
+                                    <Route
+                                        key={index}
+                                        path={path}
+                                        element={element}
+                                    />
+                                )
+                            })}
+                        </Routes>
+                    </Auth0ProviderWithHistory>
                 </Router>
             </MediaQueryContext.Provider>
         </div>

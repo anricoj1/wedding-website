@@ -1,23 +1,22 @@
 # config
-from config.env import HOST, PORT, RELOAD, APP
+from config.env import HOST, PORT, DEBUG
 
-# fastapi
-from fastapi import FastAPI
-from uvicorn import run
+# flask
+from flask import Flask, render_template
 
 # api routers
-from routers.client import client
+from api.api import api
 
 # create server
-wsgi_server: FastAPI = FastAPI()
+app: Flask = Flask(__name__, static_folder="./client/dist/assets/", template_folder="./client/dist/")
 
-# include routers
-wsgi_server.include_router(client)
+# register blueprints
+app.register_blueprint(api)
 
-@wsgi_server.get('/')
-def index():    
-    return 'index.html'
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    run(app=APP, host=HOST, port=PORT, reload=RELOAD)
+    app.run(host=HOST, port=PORT, debug=DEBUG)

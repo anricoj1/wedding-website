@@ -7,7 +7,6 @@ from pandas import read_sql_query
 
 # python modules
 from sqlite3 import connect, OperationalError
-from logging import info
 
 class SQLiteConnection:
     """Manages Database Connection Status"""
@@ -21,7 +20,8 @@ class SQLiteConnection:
     def close(self, close: bool) -> None:
         """Close connection"""
         if close:
-            info("Connection cursor closed")
+            self.exit_cursor()
+            print("Connection cursor closed")
     
     def query(self, query: str, params=[], close=False) -> list[dict]:
         """Query rows from table, Optional[params], Optional[close]"""
@@ -30,15 +30,17 @@ class SQLiteConnection:
                 return read_sql_query(sql=query, con=self.connection, params=params).to_dict(orient='records')
             return read_sql_query(sql=query, con=self.connection).to_dict(orient='records')
         except DatabaseError as err:
-            info(err)
+            print(err)
+            pass
         except OperationalError as err:
-            info(err)
+            print(err)
+            pass
         finally:
             self.close(close)
 
     def alert_rows(self, query: str, params=[] or (), close=False) -> None:
         """Commit db UPDATES, DELETES, INSERTS etc.. Optional[params], Optional[close]"""
-        info(f"Executed query: {query}")
+        print(f"Executed query: {query}")
         try:
             if len(params) > 0:
                 self.execute(query, params)
@@ -47,9 +49,11 @@ class SQLiteConnection:
                 self.execute(query)
                 self.commit()
         except DatabaseError as err:
-            info(err)
+            print(err)
+            pass
         except OperationalError as err:
-            info(err)
+            print(err)
+            pass
         finally:
             self.close(close)
 
@@ -61,6 +65,7 @@ class WeddingDatabase(SQLiteConnection):
 
     def create_users(self) -> None:
         """Create users table"""
+        # LOGGER.info("Creating users table")
         self.alert_rows(
             query="""CREATE TABLE users (
                 id INTEGER PRIMARY KEY,
