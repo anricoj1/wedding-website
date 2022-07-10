@@ -18,7 +18,6 @@ const Home: NextPage = () => {
         <Flexbox>
             <Gallery
                 imageList={imageList}
-                intervalTime={60000}
             />
             <FlexChild>
                 <Container>
