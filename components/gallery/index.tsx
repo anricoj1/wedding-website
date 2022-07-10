@@ -30,7 +30,7 @@ const Gallery = ({ imageList, intervalTime = 4000 }: GalleryProps) => {
             paginate(1);
         }, intervalTime);
         return () => clearInterval(interval);
-    },[]);
+    });
 
     return (
         <div className="gallery">
